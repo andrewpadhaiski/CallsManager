@@ -2,16 +2,17 @@
 Simple Application that accepts a call, validate it and store the formatted result in a file.
 
 Application internally uses Spring Boot with an embedded application server Tomcat.
+Building tool is gradle. Distribution of gradle you can find [here](http://gradle.org/). 
 
 #### There are two ways to run the application:
 
-1. Using spring boot plugin for gradle
+* Using spring boot plugin for gradle
 
 ```
     gradle springBoot
 ```
 
-2. Building an executable jar
+* Building and running an executable jar file
 
 ```
     gradle build
@@ -20,13 +21,13 @@ Application internally uses Spring Boot with an embedded application server Tomc
 
 #### Use case:
 
-Application provides next url for call creation:
+Application provides next url for call creation
 
 ```
    POST api/call
 ```
 
-which accepts the next json structure:
+Accepted json data are the following:
 
 ```
     {
@@ -34,10 +35,9 @@ which accepts the next json structure:
         "lastName":"Padhaiski",
         "telephoneNumber": "111123443333"
     }
-
 ```
 
-If request didn't pass the validation rules, response with status code 400 Bad Request will send to client
+If request didn't pass the validation rules, response with status code 400 (Bad Request) will send to client
 
 ```
     {
@@ -50,7 +50,7 @@ If request didn't pass the validation rules, response with status code 400 Bad R
     }
 ```
 
-Successful response has http status code 201 Created with following json.
+Successful response has http status code 201 (Created) with following json.
 
 ```
     {
@@ -59,5 +59,6 @@ Successful response has http status code 201 Created with following json.
          "time": "10:52:22",
          "telephoneNumber": "00111 123 443 333"
     }
+```
 
 The file is created in the directory where you run java - jar command.
