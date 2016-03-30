@@ -37,6 +37,19 @@ which accepts the next json structure:
 
 ```
 
+If request didn't pass the validation rules, response with status code 400 Bad Request will send to client
+
+```
+    {
+        "timestamp": 1459337367199,
+        "status": 400,
+        "error": "Bad Request",
+        "exception": "com.redalpha.callsmanager.exception.ValidationException",
+        "message": "First name cannot be more than 30 characters.",
+        "path": "/api/call"
+    }
+```
+
 Successful response has http status code 201 Created with following json.
 
 ```
