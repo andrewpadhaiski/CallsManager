@@ -1,0 +1,32 @@
+group 'com.redalpha'
+version '0.1'
+
+ext {
+    springBootVerison = '1.3.3.RELEASE'
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.3.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+compileJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-web:$springBootVerison"
+    testCompile("org.springframework.boot:spring-boot-starter-test:$springBootVerison")
+}
